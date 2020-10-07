@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Image;
 use Illuminate\Http\UploadedFile;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
+use Storage;
 
 class ProductController extends Controller
 {
