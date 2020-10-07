@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Image;
 use Illuminate\Http\UploadedFile;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
@@ -80,16 +81,14 @@ class ProductController extends Controller
         $product_image = $request->image;
 
         //画像をアップロード
-        $file = $request->file('image');
-        $file = $request->image;
-        $path = $request->image->path();
-        $path = $request->image->store('public/books-images');
-        $read_path = str_replace('public/', 'storage/', $path);
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        Image::insert([
+            "image" => $image
+        ]);
 
         $request->session()->put([
             'product_title' => $product_title,
             'product_price' => $product_price,
-            'read_path' => $read_path,
         ]);
 
         return redirect('/product/add-check');
@@ -191,10 +190,6 @@ class ProductController extends Controller
 
         $product = Product::where('id', $product_id)->first();
 
-        //元のアップロード画像を削除
-        $delete_image = str_replace('storage/', 'public/', $product->image);
-        Storage::delete($delete_image);
-
         return view('product.edit', [
             'login_name' => $login_name,
             'product' => $product,
@@ -208,16 +203,14 @@ class ProductController extends Controller
         $product_image = $request->image;
 
         //画像をアップロード
-        $file = $request->file('image');
-        $file = $request->image;
-        $path = $request->image->path();
-        $path = $request->image->store('public/books-images');
-        $read_path = str_replace('public/', 'storage/', $path);
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        Image::insert([
+            "image" => $image
+        ]);
 
         $request->session()->put([
             'product_title' => $product_title,
             'product_price' => $product_price,
-            'read_path' => $read_path,
         ]);
 
         return redirect('/product/edit-check');
