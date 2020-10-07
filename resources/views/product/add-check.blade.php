@@ -31,7 +31,7 @@
                 </table>
             </div>
             <div class="right">
-                <img src="data:image/png;base64,<?= image ?>" alt="data:image/png;base64,<?= image ?>">
+                <img src="{{ $read_path->image }}" alt="{{ $read_path->image }}">
             </div>
         </div>
         <input class="button black" type="button" onclick="history.back()" value="戻る"> |
