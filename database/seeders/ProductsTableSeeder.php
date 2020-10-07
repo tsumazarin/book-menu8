@@ -17,7 +17,16 @@ class ProductsTableSeeder extends Seeder
         $param = [
             'title' => 'ペスト',
             'price' => 400,
-            'image' => 'ADBCDCFA-1081-469C-BCD4-C414AA737149.JPEG',
+            'image' => 'public/images/X81Gu6IxVr4C0ZTBsKfGRlk9mddfGslFBVB6JJPQ.jpeg',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+        DB::table('products')->insert($param);
+
+        $param = [
+            'title' => '堕落論',
+            'price' => 300,
+            'image' => 'public/images/uoKsz7DTc134xGHkBtR73ubdCLuFGBEu9ctW7uT7.jpeg',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ];
