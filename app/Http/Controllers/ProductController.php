@@ -86,7 +86,7 @@ class ProductController extends Controller
         //s3アップロード開始
         $image = $request->file('image');
         // バケットの`myprefix`フォルダへアップロード
-        $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+        $path = Storage::disk('s3')->putFile('book-menu8', $image, 'public');
         // アップロードした画像のフルパスを取得
         $read_path->image = Storage::disk('s3')->url($path);
 
