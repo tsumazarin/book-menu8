@@ -90,6 +90,7 @@ class ProductController extends Controller
         // アップロードした画像のフルパスを取得
         $read_path->image = Storage::disk('s3')->url($path);
 
+        $read_path->timestamps = false;
         $read_path->save();
 
         $request->session()->put([
