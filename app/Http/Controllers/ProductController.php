@@ -9,7 +9,6 @@ use App\Models\Image;
 use Illuminate\Http\UploadedFile;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
-use Storage;
 
 class ProductController extends Controller
 {
