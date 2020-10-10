@@ -31,7 +31,7 @@
                 </table>
             </div>
             <div class="right">
-                <img src="{{ mix($read_path) }}" alt="{{ asset($read_path) }}">
+                <img src="{{ Storage::disk('s3')->url($read_path) }}" alt="{{ Storage::disk('s3')->url($read_path) }}">
             </div>
         </div>
         <input class="button black" type="button" onclick="history.back()" value="戻る"> |

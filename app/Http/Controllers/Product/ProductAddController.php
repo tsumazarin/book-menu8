@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\Image;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -31,11 +32,11 @@ class ProductAddController extends Controller
         $product_image = $request->image;
 
         //画像をアップロード
-        $file = $request->file('image');
-        $file = $request->image;
-        $path = $request->image->path();
-        $path = $request->image->store('public/books-images');
-        $read_path = str_replace('public/', 'storage/', $path);
+        $read_path = Storage::disk('s3')->put('/book-menu8', $product_image, 'public');
+
+        $image = new Image;
+        $image->image = $read_path;
+        $image->save();
 
         $request->session()->put([
             'product_title' => $product_title,
