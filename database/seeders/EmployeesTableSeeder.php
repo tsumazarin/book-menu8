@@ -22,7 +22,5 @@ class EmployeesTableSeeder extends Seeder
             'updated_at' => date('Y-m-d H:i:s'),
         ];
         DB::table('employees')->insert($param);
-
-
     }
 }
