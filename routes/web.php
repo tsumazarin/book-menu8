@@ -111,7 +111,7 @@ Route::namespace('App\Http\Controllers\Product')->group(function () {
     Route::post('/product/add', 'ProductAddController@addOk');
 
     Route::get('/product/add-check', 'ProductAddController@addCheck');
-    Route::post('/product/add-check', 'Product\ProductAddController@addCheckOk');
+    Route::post('/product/add-check', 'ProductAddController@addCheckOk');
 
     Route::get('/product/add-done', 'ProductAddController@addDone');
 
