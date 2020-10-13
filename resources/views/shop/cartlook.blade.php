@@ -24,7 +24,7 @@
               <tr>
                 <td>『{{ $selected_name[$i] }}』</td>
                 <td>
-                  <img src="{{ asset($selected_image[$i]) }}">
+                  <img src="{{ secure_asset($selected_image[$i]) }}">
                 </td>
                 <td>{{ $selected_price[$i] }}円</td>
                 <td>

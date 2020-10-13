@@ -25,7 +25,7 @@
             </table>
         </div>
         <div class="right">
-            <img src="{{ asset($product->image) }}" alt="{{ asset($product->image) }}">
+            <img src="{{ secure_asset($product->image) }}" alt="{{ secure_asset($product->image) }}">
         </div>
     </div>
     <br><br>
