@@ -17,9 +17,4 @@
       古本管理
     </a><br>
     <dd></dd>
-    <br><br>
-    <a class="button black" href="/order/download">
-      注文ダウンロード
-    </a>
-    <dd></dd>
 @endsection
