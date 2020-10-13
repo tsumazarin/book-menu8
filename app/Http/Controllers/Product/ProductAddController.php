@@ -25,7 +25,7 @@ class ProductAddController extends Controller
         return view('product.add', ['login_name' => $login_name]);
     }
 
-    public function addOk(ProductRequest $request)
+    public function addOk(Request $request)
     {
         $product_title = $request->title;
         $product_price = $request->price;
