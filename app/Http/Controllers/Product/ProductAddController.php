@@ -43,7 +43,7 @@ class ProductAddController extends Controller
         $request->session()->put([
             'product_title' => $product_title,
             'product_price' => $product_price,
-            'read_path' => $read_path,
+            'read_path' => $image->image,
         ]);
 
         return redirect('/product/add-check');
