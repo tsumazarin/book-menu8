@@ -32,10 +32,11 @@ class ProductAddController extends Controller
         $product_image = $request->image;
 
         //画像をアップロード
-        $read_path = Storage::disk('s3')->putFile('/book-menu8', $product_image, 'public');
+        $storage = Storage::disk('s3');
+        $read_path = $storage->putFile('/book-menu8', $product_image, 'public');
 
         $image = new Image;
-        $image->image = $read_path;
+        $image->image = $storage->url();
         $image->timestamps = false;
         $image->save();
 
