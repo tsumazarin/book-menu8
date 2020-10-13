@@ -25,7 +25,7 @@
             </table>
         </div>
         <div class="right">
-            <img src="{{ mix($product->image) }}" alt="{{ asset($product->image) }}">
+            <img src="{{ asset($product->image) }}" alt="{{ asset($product->image) }}">
         </div>
     </div>
     <br><br>
