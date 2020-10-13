@@ -36,7 +36,7 @@ class ProductAddController extends Controller
         $read_path = $storage->putFile('/book-menu8', $product_image, 'public');
 
         $image = new Image;
-        $image->image = $storage->url();
+        $image->image = $storage->url($read_path);
         $image->timestamps = false;
         $image->save();
 
