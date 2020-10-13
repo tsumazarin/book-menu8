@@ -43,7 +43,8 @@ class ProductAddController extends Controller
         $request->session()->put([
             'product_title' => $product_title,
             'product_price' => $product_price,
-            'read_path' => $image->image,
+            'read_path' => $read_path,
+            'image' => $image->image,
         ]);
 
         return redirect('/product/add-check');
@@ -75,12 +76,12 @@ class ProductAddController extends Controller
     {
         $product_title = $request->session()->get('product_title');
         $product_price = $request->session()->get('product_price');
-        $read_path = $request->session()->get('read_path');
+        $image = $request->session()->get('image');
 
         $product_info = [
             'title' => $product_title,
             'price' => $product_price,
-            'image' => $read_path,
+            'image' => $image,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ];
