@@ -32,7 +32,7 @@ footer{
   background-size: cover;
   color:#fff;
   width:100%;
-  height:250px;
+  height:300px;
   padding:12px 0;
   font-size:2.3rem;
 }
@@ -174,7 +174,7 @@ input {
 /* footer */
 .footer-content {
   position:absolute;
-  top:50%;
+  top:60%;
   right:40%;
   margin:auto;
 }
